@@ -25,5 +25,10 @@ let emailFaker = faker.internet.email(nomeFaker)
     cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
 });
 
+it('Deve completar o pré-cadastro com sucesso usando Comandos customizados', () => {
+    let emailFaker2 = faker.internet.email()
+    cy.preCadastro(emailFaker2, 'R@diokppx123', 'Simone', 'Kovalenkinas')
+    cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
+});
 
 });
