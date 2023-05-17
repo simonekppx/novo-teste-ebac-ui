@@ -11,7 +11,7 @@ editarEnderecoFaturamento(nome, sobrenome, empresa, pais, endereco, numero, cida
     cy.get('#billing_address_2').clear().type(numero)
     cy.get('#billing_city').clear().type(cidade)
     cy.get('#select2-billing_state-container').click().type(estado + '{enter}')
-    cy.get('#billing_postcode').clear().type(cep)
+    cy.get('#billing_postcode').clear({force: true}).type(cep)
     cy.get('#billing_phone').clear().type(telefone)
     cy.get('#billing_email').clear().type(email)
     cy.get('.button').click()
